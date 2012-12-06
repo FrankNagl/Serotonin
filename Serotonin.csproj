@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B6D0ECA5-B2E9-4942-AF14-A1D8AFDFCD8E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Serotonin</RootNamespace>
+    <AssemblyName>Serotonin</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <PublishUrl>veröffentlichen\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.XML" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ProcessorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProcessorForm.Designer.cs">
+      <DependentUpon>ProcessorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="src\AutoUpdater.cs" />
+    <Compile Include="src\ColorSpace\ColorSpaceEnum.cs" />
+    <Compile Include="src\ColorSpace\ColorTriple.cs" />
+    <Compile Include="src\ColorSpace\ColorTripleEnum.cs" />
+    <Compile Include="src\ColorSpace\HSB.cs" />
+    <Compile Include="src\ColorSpace\HSL.cs" />
+    <Compile Include="src\ColorSpace\IColorSpace.cs" />
+    <Compile Include="src\ColorSpace\LAB.cs" />
+    <Compile Include="src\ColorSpace\LCH.cs" />
+    <Compile Include="src\ColorSpace\LUV.cs" />
+    <Compile Include="src\ColorSpace\RGB.cs" />
+    <Compile Include="src\ColorSpace\sRGB.cs" />
+    <Compile Include="src\ColorSpace\XYZ.cs" />
+    <Compile Include="src\Controls\EndlessProgressBarForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\Controls\EndlessProgressBarForm.Designer.cs">
+      <DependentUpon>EndlessProgressBarForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\Controls\ProgressBarForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\Controls\ProgressBarForm.Designer.cs">
+      <DependentUpon>ProgressBarForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\Filter\BaseNonSBIPFilter.cs" />
+    <Compile Include="src\Filter\ConGrap.cs" />
+    <Compile Include="src\Filter\IAdditionalApply.cs" />
+    <Compile Include="src\Filter\NSAbstractEdgeMarker.cs" />
+    <Compile Include="src\Filter\NSCannyEdgeDetector.cs" />
+    <Compile Include="src\Filter\NSCannyEdgeMarker.cs" />
+    <Compile Include="src\Filter\ColorSpaceRangeDetector.cs" />
+    <Compile Include="src\Filter\NSSimpleDilatation.cs" />
+    <Compile Include="src\Filter\SplitColorSpaceChannels.cs" />
+    <Compile Include="src\Helper\BitmapConverter.cs" />
+    <Compile Include="src\Helper\BitmapHelper.cs" />
+    <Compile Include="src\Helper\ColorPalette.cs" />
+    <Compile Include="src\Helper\Contour.cs" />
+    <Compile Include="src\Helper\Drawing24Or32bpp.cs" />
+    <Compile Include="src\Helper\Drawing8Bpp.cs" />
+    <Compile Include="src\Helper\DrawingGraphics.cs" />
+    <Compile Include="src\Helper\Figure.cs" />
+    <Compile Include="src\Helper\FigurePoint.cs" />
+    <Compile Include="src\Helper\FigurePointTriple.cs" />
+    <Compile Include="src\Helper\FigureType.cs" />
+    <Compile Include="src\Helper\Gaussian.cs" />
+    <Compile Include="src\Helper\IOFile.cs" />
+    <Compile Include="src\Helper\PixelFormatFlags.cs" />
+    <Compile Include="src\Helper\RGBA.cs" />
+    <Compile Include="src\Helper\Vector.cs" />
+    <Compile Include="src\InfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\InfoForm.Designer.cs">
+      <DependentUpon>InfoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\JpegEncoder.cs" />
+    <Compile Include="src\OptionsForms\IOptionsForm.cs" />
+    <Compile Include="src\OptionsForms\NSColoredCannyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\OptionsForms\NSColoredCannyForm.Designer.cs">
+      <DependentUpon>NSColoredCannyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\OptionsForms\ConGrapForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\OptionsForms\ConGrapForm.Designer.cs">
+      <DependentUpon>ConGrapForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\OptionsForms\OriginalForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\OptionsForms\OriginalForm.Designer.cs">
+      <DependentUpon>OriginalForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\OptionsForms\SplitColorSpaceChannelsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\OptionsForms\SplitColorSpaceChannelsForm.Designer.cs">
+      <DependentUpon>SplitColorSpaceChannelsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\Processor.cs" />
+    <Compile Include="src\Program.cs" />
+    <Compile Include="src\ThirdParty\TPConvolution.cs" />
+    <Compile Include="src\ThirdParty\TPGaussianBlur.cs" />
+    <Compile Include="src\ThirdParty\TPGrayscale.cs" />
+    <Compile Include="src\VistaSecurity.cs" />
+    <EmbeddedResource Include="ProcessorForm.resx">
+      <DependentUpon>ProcessorForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="src\Controls\EndlessProgressBarForm.resx">
+      <DependentUpon>EndlessProgressBarForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\InfoForm.resx">
+      <DependentUpon>InfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\OptionsForms\NSColoredCannyForm.resx">
+      <DependentUpon>NSColoredCannyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
